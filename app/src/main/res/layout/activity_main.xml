@@ -13,9 +13,11 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal"
             android:text="Happy Birthday!"
+            android:textAlignment="center"
             android:textColor="#FF5722"
             android:textSize="40sp" />
     </LinearLayout>
@@ -23,40 +25,88 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_weight="1">
+        android:layout_weight="4"
+        android:orientation="horizontal">
 
         <!--        CakeView is a custom SurfaceView that is defined in the app's source code -->
         <cs301.birthdaycake.CakeView
             android:id="@+id/cakeview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_weight="0" />
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="right"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="HOORAY!!" />
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:orientation="vertical">
 
-        <Switch
-            android:id="@+id/switch1"
-            android:layout_width="100dp"
-            android:layout_height="10dp"
-            android:layout_weight="0"
-            android:text="Frosting" />
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How many candles?" />
 
-        <Button
-            android:id="@+id/button2"
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:max="5"
+                android:progress="2" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="yay..." />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Frosting" />
+
+            <Switch
+                android:id="@+id/switch2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="Candles" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/blowout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Blow out" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:onClick="goodbye"
+                android:text="Goodbye" />
+        </LinearLayout>
 
     </LinearLayout>
+
 </LinearLayout>
